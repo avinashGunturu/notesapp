@@ -4,7 +4,7 @@ import Home from './Pages/Home.jsx'
 import AddNote from './Pages/AddNote.jsx'
 function App() {
   return (
-    <div className="App">
+    <div className="App rr">
         <Header />
         <Routes>
           <Route path="/" exact element={<Home/>} />
