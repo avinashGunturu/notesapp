@@ -49,7 +49,7 @@ input:focus{
   outline: none;
 }
 .container {
-  width: 1150px;
+  max-width: 1150px;
   margin: auto;
   padding: 32px 40px;
 }
@@ -223,10 +223,10 @@ border-radius: 10px;
 }
 
 .NotesList {
-  width: 100%;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 70px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 3rem;
 }
 
 .main {
@@ -376,4 +376,32 @@ textarea:focus{
 .NoteConatainer:hover{
   transform: scale(1.125);
   transition: transform .3s ease;
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+  
+  .flex{
+    align-items: center;
+    flex-direction: column;
+  }
+  .logoContainer {
+    margin-bottom: 40px;
+    margin-left: -100px;
+  }
+  .searchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+.NoteConatainer{
+  width: 95%;
+  margin-left: -10px;
+}
+
 }

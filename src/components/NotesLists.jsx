@@ -12,7 +12,7 @@ const [newNoteList,setNweNotelist] = useState(NotesList)
 useEffect(()=>{
     
   if(noteTypeValue==="All" && searchValue===" "){
-    setNweNotelist([...newNoteList]);
+    setNweNotelist((ov)=>ov);
   }else{
 
     // NotesList.filter((item)=> item.title.includes(searchValue) && item.note_type === noteTypeValue)
