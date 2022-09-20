@@ -1,13 +1,379 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+
+
+
+
+
+:root{
+  /* COLOR */
+  --green:#4E9F3D;
+  --red:#FF4001;
+  --orange:#FFC000;
+  --black:#150000;
+  --thick-greay:#868686;
+  --light-greay:#DEDEDE;
+  
+  /* BOX-SHADOW */
+
+  --notesShadow: 2px 2px 5px rgba(122, 122, 122, 0.25);
+  --colorboxShadow: 4px 4px 4px rgba(209, 204, 204, 0.25);
+  --plusshadow:4px 4px 4px rgba(0, 0, 0, 0.25);
+
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* GLOBAL STYLES*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+input {
+  border: 0;
+  font-size: 20px;
+  padding: 15px 0px;
+}
+
+input:focus{
+  outline: none;
+}
+.container {
+  width: 1150px;
+  margin: auto;
+  padding: 32px 40px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* TEXT STYLES */
+
+.text-green {
+  color: var(--green);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-gl {
+  color: var(--light-greay);
+}
+.text-gt{
+  color: var(--thick-greay);
+}
+
+.text-xs {
+  font-size: 12px;
+}
+.text-s {
+  font-size: 14px;
+}
+
+.text-m{
+  font-size: 20px;
+}
+
+.type {
+  height: 20px;
+  width: 40px;
+  box-shadow: 4px 4px 4px rgba(209, 204, 204, 0.25);
+  border-radius: 50px;
+}
+
+.logo {
+font-weight: 700;
+font-size: 32px;
+color: var(--black);
+margin: 0px;
+padding:0px ;
+}
+
+
+/* BG STYLES */
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+
+.px{
+  border-radius: 20px 20px 0px 0px;
+}
+.py{
+  border-radius: 0px 0px 18px 18px;
+
+}
+.noborder {
+  border: 0px !important;
+}
+.notes-text{
+  font-family: 'Hi Melody', cursive;
+}
+
+
+.logoContainer p {
+  margin: 0px;
+  margin-top: -10px;
+  padding: 0px;
+}
+
+.searchContainer {
+  margin: 0;
+  border-bottom: 1px solid var(--light-greay);
+  padding: 0px 32px;
+}
+.searchContainer img {
+  cursor: pointer;
+  margin-bottom: -5px;
+}
+.filterconataner {
+  width: 200px;
+  border: 1px solid var(--light-greay) ;
+  padding: 0px 24px;
+  border-radius: 20px;
+
+}
+
+.filterconataner img {
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform .3s ease;
+}
+
+.filterconataner img.active{
+  transform: rotate(-180deg);
+  transition: transform .3s ease;
+}
+
+.filterContents {
+  position: absolute;
+  width: 250px;
+  border-radius: 16px;
+  border: 1px solid var(--light-greay) ;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+
+.filterContents p{
+  border-bottom: 1px solid var(--light-greay);
+  margin: 0px;
+  padding: 15px 24px;
+  cursor: pointer;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.NoteConatainer {
+  width: 300px;
+  height: 230px;
+  overflow: hidden;
+  padding: 16px 16px;
+  background: #FFFDFD;
+border: 1px solid #E1E1E1;
+box-shadow: 2px 2px 5px rgba(122, 122, 122, 0.25);
+border-radius: 10px;
+}
+
+.NoteConatainer p{
+  margin: 0px;
+}
+.titleContanier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.timeContanier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.NotesList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 70px;
+}
+
+.main {
+  position: relative;
+}
+.addlist {
+width: 73px;
+height: 73px;
+background: #FFFFFF;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 32px;
+position: sticky;
+left:78%;
+bottom: 18%;
+z-index: 100;
+cursor: pointer;
+}
+
+.addlist:hover {
+  font-size: 36px;
+  transform: scale(1.1);
+  transition: all .1s ease;
+}
+
+.designcoantiner {
+  margin: 64px auto;
+  padding:32px 30px 20px 30px ;
+  background: #FFFFFF;
+border: 1px solid #EDEDED;
+border-radius: 32px;
+}
+.navgationContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.navgationContainer img {
+  margin-left: 40px;
+}
+
+.navgationContainer img:hover {
+     margin-left: 35px;
+     transition: margin .2s ease;
+}
+.notesContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.titleFilter{
+  border-right: 1px solid var(--light-greay);
+  padding-right: 42px;
+}
+
+.title{
+  margin-bottom: 24px;
+  background: #FFFFFF;
+border: 1px solid #EFEEEE;
+border-radius: 4px;
+padding-left: 16px;
+width: 300px;
+}
+
+.imgContainer {
+  margin-top: 64px;
+}
+.filterContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.textw{
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+
+textarea{
+  padding:12px 10px 10px 10px;
+  font-size: 18px;
+  font-weight: 400;
+line-height: 22px;
+display: flex;
+align-items: center;
+text-align: justify;
+letter-spacing: 0.05em;
+border: 0px;
+color: #656565;
+resize: none;
+}
+
+
+textarea:focus{
+  outline: none;
+}
+
+.actionContainer {
+  float: right;
+  margin-top: 36px;
+  padding: 16px;
+}
+
+.actionContainer button {
+   padding: 14px 42px;
+   margin: 0px 32px;
+   border: 0;
+   /* background-color: #fff; */
+   color: #fff;
+   font-weight: 600;
+   border-radius: 20px;
+   font-size: 18px;
+   letter-spacing: 3px;
+   cursor: pointer;
+}
+
+.actionContainer button:hover{
+  transform: scale(1.1);
+  transition: transform .3s ease;
+}
+
+.nonotescontainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,15%);
+  padding: 16px 32px;
+}
+
+.nonotescontainer p {
+  font-size: 64px;
+  margin:0px  10px  0px 64px;
+  width: 350px;
+  font-family: 'hi melody';
+}
+
+
+.NoteConatainer:hover{
+  transform: scale(1.125);
+  transition: transform .3s ease;
 }
