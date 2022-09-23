@@ -27,10 +27,11 @@ const navigate = useNavigate();
 
 
  const {NotesList,dispatch} =useContext(NotesProvider)
-  
+
+ 
 
 const [notebyid] = NotesList.filter((note) => note._id === id)
-
+// const first = useRef(second)
 // INPUT VALUE STRUCTURE
 let newid = id === ':id' ? uid : id;
 let nt = notebyid?.title === undefined ? "":notebyid.title
@@ -127,7 +128,7 @@ const saveandout = ()=>{
          </div>
         </div>
         <div className="textareacontainer">
-          <textarea name="notes" id="notes" cols="65" rows="22" value={inputValues.description} placeholder="Enter your Notes Here........" onChange={notesChange}></textarea>
+          <textarea name="notes" autoFocus id="notes" cols="65" rows="22" value={inputValues.description} placeholder="Enter your Notes Here........" onChange={notesChange}></textarea>
         </div>
       </div>
       <div className="actionContainer">

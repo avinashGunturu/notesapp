@@ -199,6 +199,7 @@ padding:0px ;
 border: 1px solid #E1E1E1;
 box-shadow: 2px 2px 5px rgba(122, 122, 122, 0.25);
 border-radius: 10px;
+margin: 10px;
 }
 
 .NoteConatainer p{
@@ -224,9 +225,10 @@ border-radius: 10px;
 
 .NotesList {
   max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 3rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ flex-wrap: wrap;
 }
 
 .rr{
@@ -378,7 +380,38 @@ textarea:focus{
   transition: transform .3s ease;
 }
 
-
+@media screen and (max-width: 830px) and (min-width:490px){
+  .notesContainer{
+    flex-direction: column;
+  }
+  .titleFilter {
+    display: flex;
+    justify-content: space-between;
+    border: 0px;
+  }
+  .title{
+  /* width: 200px; */
+  margin-right: 30px;
+  }
+  .imgContainer{
+    display: none;
+  }
+  .filterContainer {
+    align-items: unset;
+    justify-content: unset;
+  }
+  .nonotescontainer{
+    flex-direction: column-reverse; 
+  }
+  .nonotescontainer p {
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .designcoantiner {
+    padding: 10px 10px;
+  }
+}
 
 @media screen and (max-width: 480px) {
 
@@ -397,30 +430,66 @@ textarea:focus{
     justify-content: center;
   }
   .nonotescontainer{
-    flex-direction: column-reverse;
-    
+    flex-direction: column; 
   }
-  .nonotescontainer img {
+  .nonotescontainer p {
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+   .nonotescontainer img {
    width: 70%;
-  }
-  .nonotescontainer p{
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-  .nonotescontainer{
-    width: 80%;
+   margin: 24px 20px 10px -15px;
   }
   .addlist {
     position: fixed;
-    left: 45%;
+    left: 35%;
     bottom: 10%;
   }
+  .NoteConatainer{
+    width: 95%;
+    margin-left: -10px;
+  }
+  .navgationContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navgationContainer img{
+    margin-left: 0px;
+  }
+  
+  .notesContainer {
+    flex-direction: column;
+  }
+
+  .filterconataner {
+    flex-direction: row !important;
+  }
+ .imgContainer {
+  width: 80%;
+  margin: 32px auto;
+ }
+
+ .actionContainer button{
+     margin: 15px 5px;
+ }
+
+ .titleFilter {
+  border: 0px;
+ }
+ .designcoantiner {
+  width: 90% !important;
+ }
+.textareacontainer textarea {
+    height: 22em;
+    width: 18em;
+}
+.titleFilter {
+  padding-right: 0px ;
+}
+.designcoantiner {
+  padding: 16px 10px;
 }
 
-@media screen and (max-width: 375px) {
-.NoteConatainer{
-  width: 95%;
-  margin-left: -10px;
 }
 
-}
